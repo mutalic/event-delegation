@@ -17,7 +17,7 @@
     <script>
         /* Event Delegation */
         // 1. Add event listener to div.parent node.
-        // 2. If div.child is clicked, log message "child clicked" on console.
+        // 2. Depending on e.target, alert with corresponding message.
         document.getElementById("parent").addEventListener("click", function (e) {
             console.log(e);
             if (e.target.id === "child") {
