@@ -8,8 +8,26 @@
     <title>Event Delegation</title>
 </head>
 <body>
-    <div class="parent">
-        <div class="child"></div>
+    <div id="parent">
+        <div id="child">
+            <div id="grandchild"></div>
+        </div>
     </div>
+
+    <script>
+        /* Event Delegation */
+        // 1. Add event listener to div.parent node.
+        // 2. If div.child is clicked, log message "child clicked" on console.
+        document.getElementById("parent").addEventListener("click", function (e) {
+            console.log(e);
+            if (e.target.id === "child") {
+                alert("You clicked on the child!");
+            } else if (e.target.id === "grandchild") {
+                alert("You clicked on the grandchild!");
+            } else {
+                alert("You clicked on the parent!")
+            }
+        })
+    </script>
 </body>
 </html>
